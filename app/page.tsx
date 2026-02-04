@@ -18,12 +18,12 @@ export default function Home() {
       {/* Red Band Separator */}
       <div className="h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent" />
       
-      <News />
+      <Socials />
       
       {/* Red Band Separator */}
       <div className="h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent" />
       
-      <Socials />
+      <News />
 
       {/* Footer */}
       <footer className="bg-black border-t border-red-600/50 py-8 md:py-12">

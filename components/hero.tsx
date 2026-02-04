@@ -56,12 +56,24 @@ export function Hero() {
         </div>
 
         {/* Loading Text Effect */}
-        <div className={`min-h-16 md:min-h-20 flex items-center justify-center transition-opacity duration-700 ${
-          isLoading ? 'opacity-0' : 'opacity-100'
-        }`}>
-          <p className="text-xl md:text-3xl text-red-500 font-black tracking-widest text-center drop-shadow-lg" style={{ fontFamily: "'Space Mono', monospace" }}>
+        <div className={`min-h-16 md:min-h-20 flex items-center justify-center transition-opacity duration-700 ${isLoading ? 'opacity-0' : 'opacity-100'
+          }`}>
+          <p
+            className="text-2xl md:text-4xl lg:text-5xl
+             text-red-500
+             font-extrabold
+             tracking-widest
+             text-center
+             drop-shadow-[0_4px_20px_rgba(255,0,0,0.8)]
+             uppercase"
+            style={{
+              fontFamily: "'Space Mono', monospace",
+              WebkitTextStroke: "1px rgba(255,0,0,0.6)",
+            }}
+          >
             The short of a lifetime. Hedge the market.
           </p>
+
         </div>
 
         {/* Contract Address Box */}

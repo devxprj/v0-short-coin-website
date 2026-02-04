@@ -9,20 +9,20 @@ export default function Home() {
     <main className="w-full overflow-x-hidden bg-black">
       <Navbar />
       <Hero />
-      
+
       {/* Red Band Separator */}
       <div className="h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent" />
-      
+
       <About />
-      
-      {/* Red Band Separator */}
+
+
       <div className="h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent" />
-      
+
       <Socials />
-      
+
       {/* Red Band Separator */}
       <div className="h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent" />
-      
+
       <News />
 
       {/* Footer */}

@@ -33,21 +33,21 @@ export function Hero() {
       <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">
         {/* Avatar and Logo Container */}
         <div className="mb-8 md:mb-12 flex flex-col items-center gap-4">
-          {/* Avatar */}
-          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-3 border-red-600 shadow-lg shadow-red-600/50">
+          {/* Avatar with l.png */}
+          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-3 border-red-600 shadow-lg shadow-red-600/50">
             <Image
-              src="/images/image.png"
+              src="/images/l.png"
               alt="Short Coin Avatar"
-              width={80}
-              height={80}
+              width={96}
+              height={96}
               className="w-full h-full object-cover"
             />
           </div>
 
-          {/* S.png Logo */}
-          <div className="w-32 h-20 md:w-48 md:h-32 relative">
+          {/* ss.png Logo */}
+          <div className="w-40 h-24 md:w-56 md:h-36 relative">
             <Image
-              src="/images/s.png"
+              src="/images/ss.png"
               alt="Short Coin"
               fill
               className="object-contain drop-shadow-2xl"
@@ -56,10 +56,10 @@ export function Hero() {
         </div>
 
         {/* Loading Text Effect */}
-        <div className={`min-h-12 md:min-h-16 flex items-center justify-center transition-opacity duration-700 ${
+        <div className={`min-h-16 md:min-h-20 flex items-center justify-center transition-opacity duration-700 ${
           isLoading ? 'opacity-0' : 'opacity-100'
         }`}>
-          <p className="text-lg md:text-2xl text-red-400 font-bold tracking-wider" style={{ fontFamily: "'Space Mono', monospace" }}>
+          <p className="text-xl md:text-3xl text-red-500 font-black tracking-widest text-center drop-shadow-lg" style={{ fontFamily: "'Space Mono', monospace" }}>
             The short of a lifetime. Hedge the market.
           </p>
         </div>

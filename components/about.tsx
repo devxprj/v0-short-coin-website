@@ -53,40 +53,36 @@ export function About() {
           ABOUT SHORTCOIN
         </h2>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-red-600 via-red-500 to-transparent" />
+        {/* Horizontal Timeline */}
+        <div className="relative w-full">
+          {/* Horizontal line */}
+          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent transform -translate-y-1/2" />
 
           {/* Timeline items */}
-          <div className="space-y-12 md:space-y-16">
+          <div className="flex flex-col md:flex-row items-stretch gap-4 md:gap-2 relative">
             {timelineItems.map((item, index) => (
               <div
                 key={index}
-                className={`relative transition-all duration-700 transform ${
+                className={`flex-1 relative transition-all duration-700 transform ${
                   visibleItems.includes(index)
                     ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-12'
+                    : 'opacity-0 translate-y-8'
                 }`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-0">
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 -translate-y-6">
                   <div className={`w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-r from-red-600 to-red-500 border-4 border-black shadow-lg shadow-red-600/50 transition-all duration-700 ${
                     visibleItems.includes(index) ? 'animate-pulse scale-100' : 'scale-0'
                   }`} />
                 </div>
 
                 {/* Content */}
-                <div
-                  className={`${
-                    index % 2 === 0 ? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'
-                  } md:w-1/2 px-6 md:px-0`}
-                >
-                  <div className="bg-gradient-to-r from-red-950/60 to-red-900/40 border border-red-600/50 rounded-2xl p-6 md:p-8 backdrop-blur-sm hover:border-red-500/80 transition-all duration-500 hover:shadow-xl hover:shadow-red-600/40 hover:bg-red-900/50">
-                    <h3 className="text-xl md:text-2xl font-bold text-red-300 mb-3">
+                <div className="pt-8 md:pt-12 px-3 md:px-2">
+                  <div className="bg-gradient-to-r from-red-950/60 to-red-900/40 border border-red-600/50 rounded-xl p-4 md:p-5 backdrop-blur-sm hover:border-red-500/80 transition-all duration-500 hover:shadow-xl hover:shadow-red-600/40 hover:bg-red-900/50 h-full">
+                    <h3 className="text-sm md:text-base font-bold text-red-300 mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-red-400 text-base md:text-lg font-medium">
+                    <p className="text-red-400 text-xs md:text-sm font-medium">
                       {item.subtitle}
                     </p>
                   </div>

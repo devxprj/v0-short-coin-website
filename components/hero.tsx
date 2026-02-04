@@ -1,7 +1,17 @@
+'use client'
+
 import Image from 'next/image'
 import { ContractBox } from './contract-box'
+import { useEffect, useState } from 'react'
 
 export function Hero() {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <section
       id="home"
@@ -21,38 +31,43 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">
-        {/* Logo */}
-        <div className="mb-8 md:mb-12 flex justify-center">
-          <div className="w-24 h-24 md:w-32 md:h-32 relative">
+        {/* Avatar and Logo Container */}
+        <div className="mb-8 md:mb-12 flex flex-col items-center gap-4">
+          {/* Avatar */}
+          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-3 border-red-600 shadow-lg shadow-red-600/50">
             <Image
-              src="/images/logo.png"
-              alt="Short Coin Logo"
-              width={128}
-              height={128}
-              className="w-full h-full drop-shadow-2xl"
+              src="/images/image.png"
+              alt="Short Coin Avatar"
+              width={80}
+              height={80}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* S.png Logo */}
+          <div className="w-32 h-20 md:w-48 md:h-32 relative">
+            <Image
+              src="/images/s.png"
+              alt="Short Coin"
+              fill
+              className="object-contain drop-shadow-2xl"
             />
           </div>
         </div>
 
-        {/* Title */}
-        <h1 className="text-4xl md:text-6xl font-black text-red-500 mb-4 md:mb-6 drop-shadow-lg" style={{ fontFamily: "'Space Mono', monospace" }}>
-          SHORT COIN
-        </h1>
-
-        {/* Description */}
-        <p className="text-lg md:text-2xl text-red-300/80 mb-8 md:mb-12 font-medium tracking-wide">
-          The short of a lifetime. Hedge the market.
-        </p>
-
-        {/* Contract Address Box */}
-        <div className="mb-8 md:mb-12">
-          <ContractBox />
+        {/* Loading Text Effect */}
+        <div className={`min-h-12 md:min-h-16 flex items-center justify-center transition-opacity duration-700 ${
+          isLoading ? 'opacity-0' : 'opacity-100'
+        }`}>
+          <p className="text-lg md:text-2xl text-red-400 font-bold tracking-wider" style={{ fontFamily: "'Space Mono', monospace" }}>
+            The short of a lifetime. Hedge the market.
+          </p>
         </div>
 
-        {/* CTA Button */}
-        <button className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-3 md:py-4 px-8 md:px-12 rounded-full transition-all duration-300 transform hover:scale-105 text-base md:text-lg shadow-2xl">
-          Buy Shortcoin Now
-        </button>
+        {/* Contract Address Box */}
+        <div className="mt-8 md:mt-12 mb-4">
+          <ContractBox />
+        </div>
       </div>
     </section>
   )

@@ -28,7 +28,7 @@ export function About() {
     timelineItems.forEach((_, index) => {
       setTimeout(() => {
         setVisibleItems((prev) => [...prev, index])
-      }, index * 300)
+      }, index * 400)
     })
   }, [])
 
@@ -46,8 +46,11 @@ export function About() {
       </div>
 
       <div className="relative z-10 max-w-3xl mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-black text-center text-red-500 mb-16 md:mb-24 drop-shadow-lg" style={{ fontFamily: "'Space Mono', monospace" }}>
-          THE NARRATIVE
+        {/* Red Band */}
+        <div className="h-2 bg-gradient-to-r from-transparent via-red-600 to-transparent mb-12 md:mb-16" />
+        
+        <h2 className="text-4xl md:text-5xl font-black text-center text-red-500 mb-12 md:mb-16 drop-shadow-lg" style={{ fontFamily: "'Space Mono', monospace" }}>
+          ABOUT SHORTCOIN
         </h2>
 
         {/* Timeline */}
@@ -60,15 +63,17 @@ export function About() {
             {timelineItems.map((item, index) => (
               <div
                 key={index}
-                className={`relative transition-all duration-500 transform ${
+                className={`relative transition-all duration-700 transform ${
                   visibleItems.includes(index)
                     ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-8'
+                    : 'opacity-0 translate-y-12'
                 }`}
               >
                 {/* Timeline dot */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-0">
-                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-r from-red-600 to-red-500 border-4 border-black shadow-lg shadow-red-600/50 animate-pulse" />
+                  <div className={`w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-r from-red-600 to-red-500 border-4 border-black shadow-lg shadow-red-600/50 transition-all duration-700 ${
+                    visibleItems.includes(index) ? 'animate-pulse scale-100' : 'scale-0'
+                  }`} />
                 </div>
 
                 {/* Content */}
@@ -77,11 +82,11 @@ export function About() {
                     index % 2 === 0 ? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'
                   } md:w-1/2 px-6 md:px-0`}
                 >
-                  <div className="bg-gradient-to-r from-red-950/60 to-red-900/40 border border-red-600/50 rounded-2xl p-6 md:p-8 backdrop-blur-sm hover:border-red-500/80 transition-all duration-300 hover:shadow-xl hover:shadow-red-600/20">
-                    <h3 className="text-xl md:text-2xl font-bold text-red-400 mb-2">
+                  <div className="bg-gradient-to-r from-red-950/60 to-red-900/40 border border-red-600/50 rounded-2xl p-6 md:p-8 backdrop-blur-sm hover:border-red-500/80 transition-all duration-500 hover:shadow-xl hover:shadow-red-600/40 hover:bg-red-900/50">
+                    <h3 className="text-xl md:text-2xl font-bold text-red-300 mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-red-300/80 text-base md:text-lg">
+                    <p className="text-red-400 text-base md:text-lg font-medium">
                       {item.subtitle}
                     </p>
                   </div>

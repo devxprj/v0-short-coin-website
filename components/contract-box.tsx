@@ -14,12 +14,12 @@ export function ContractBox() {
   }
 
   return (
-    <div className="bg-gradient-to-r from-red-950/40 to-red-900/40 border border-red-600/60 rounded-2xl p-4 md:p-6 backdrop-blur-sm hover:border-red-500/80 transition-all duration-300">
-      <div className="text-red-300/70 text-sm mb-2 uppercase tracking-widest font-medium">
+    <div className="bg-gradient-to-r from-red-950/50 to-red-900/50 border-2 border-red-600 rounded-2xl p-4 md:p-6 backdrop-blur-sm hover:border-red-500 transition-all duration-300">
+      <div className="text-red-500 text-sm mb-2 uppercase tracking-widest font-bold">
         Contract Address
       </div>
       <div className="flex items-center justify-between gap-3">
-        <code className="text-red-300 font-mono text-sm md:text-base flex-1 break-all">
+        <code className="text-red-400 font-mono text-sm md:text-base flex-1 break-all font-bold">
           {contractAddress}
         </code>
         <button

@@ -59,13 +59,14 @@ export function Hero() {
         <div className={`min-h-16 md:min-h-20 flex items-center justify-center transition-opacity duration-700 ${isLoading ? 'opacity-0' : 'opacity-100'
           }`}>
           <p
-            className="text-2xl md:text-4xl lg:text-5xl
+            className="text-lg md:text-3xl lg:text-5xl
              text-red-500
              font-extrabold
              tracking-widest
              text-center
              drop-shadow-[0_4px_20px_rgba(255,0,0,0.8)]
-             uppercase"
+             uppercase
+             whitespace-nowrap"
             style={{
               fontFamily: "'Space Mono', monospace",
               WebkitTextStroke: "1px rgba(255,0,0,0.6)",

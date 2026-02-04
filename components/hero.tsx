@@ -59,7 +59,7 @@ export function Hero() {
         <div className={`min-h-16 md:min-h-20 flex items-center justify-center transition-opacity duration-700 ${isLoading ? 'opacity-0' : 'opacity-100'
           }`}>
           <p
-            className="text-lg md:text-3xl lg:text-5xl
+            className="text-sm md:text-xl lg:text-3xl
              text-red-500
              font-extrabold
              tracking-widest

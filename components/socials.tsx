@@ -4,7 +4,7 @@ import Link from 'next/link'
 export function Socials() {
   const socials = [
     {
-      name: 'X',
+      name: 'Xx',
       icon: '/images/x.png',
       url: 'https://x.com/i/communities/',
     },

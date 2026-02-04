@@ -1,7 +1,3 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-
 const timelineItems = [
   {
     title: 'Everything is bleeding',
@@ -22,15 +18,6 @@ const timelineItems = [
 ]
 
 export function About() {
-  const [visibleItems, setVisibleItems] = useState<number[]>([])
-
-  useEffect(() => {
-    timelineItems.forEach((_, index) => {
-      setTimeout(() => {
-        setVisibleItems((prev) => [...prev, index])
-      }, index * 400)
-    })
-  }, [])
 
   return (
     <section id="about" className="py-20 md:py-32 bg-gradient-to-b from-black via-red-950/20 to-black relative overflow-hidden">
@@ -63,15 +50,11 @@ export function About() {
             {timelineItems.map((item, index) => (
               <div
                 key={index}
-                className={`relative transition-all duration-700 transform ${visibleItems.includes(index)
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-12'
-                  }`}
+                className="relative"
               >
                 {/* Timeline dot */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-0">
-                  <div className={`w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-r from-red-600 to-red-500 border-4 border-black shadow-lg shadow-red-600/50 transition-all duration-700 ${visibleItems.includes(index) ? 'animate-pulse scale-100' : 'scale-0'
-                    }`} />
+                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-r from-red-600 to-red-500 border-4 border-black shadow-lg shadow-red-600/50" />
                 </div>
 
                 {/* Content */}

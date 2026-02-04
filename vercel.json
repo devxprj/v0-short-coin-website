@@ -1,5 +1,0 @@
-{
-  "packageManager": "npm@11",
-  "installCommand": "npm install --legacy-peer-deps",
-  "buildCommand": "npm run build"
-}
